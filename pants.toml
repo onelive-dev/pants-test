@@ -1,0 +1,24 @@
+[GLOBAL]
+pants_version = "2.14.0"
+backend_packages.add = [
+    "pants.backend.python",
+    "pants.backend.docker",
+    "pants.backend.docker.lint.hadolint",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.lint.pylint",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.typecheck.mypy",
+]
+
+[source]
+root_patterns = [
+    '/src/python',
+    '/3rdparty/python',
+    '/test/python',
+]
+
+[python]
+interpreter_constraints = [">=3.10"]
+
+[mypy]
+config = "mypy.ini"
