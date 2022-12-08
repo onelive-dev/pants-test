@@ -1,9 +1,8 @@
 docker_image(
-    name="python",
+    name="container",
     source="Dockerfile",
     repository="maergo",
     tags=["latest"],
-    dependencies=[
-    	"src/python/maergo:main"
-    ]
+    dependencies=["src/python/maergo:main"],
+    restartable=True
 )

@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  service:
+    image: maergo
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../../../dist/src.python.maergo/main.pex:/bin/main.pex
+    restart: on-failure
+    environment:
+      POSTGRES_CONNECTION_URL: "mongodb"
+      PORT: "8000"
+#    links:
+#      - mongodb
+#  mongodb:
+#    image: mongo
+#    ports:
+#      - "27017:27017"
+#  mongo-seed:
+#    build: ./mongo-seed
+#    links:
+#      - mongodb

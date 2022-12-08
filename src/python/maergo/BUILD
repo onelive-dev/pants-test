@@ -5,6 +5,7 @@ python_sources(
         "3rdparty/python:poetry#uvicorn",
         "3rdparty/python:poetry#pydantic",
     ],
+    sources=["*.py"]
 )
 
 
@@ -15,4 +16,5 @@ pex_binary(
         ":modules",
     ],
     complete_platforms=("3rdparty/platforms:docker_python_3_10_bullseye",),
+    restartable=True
 )
